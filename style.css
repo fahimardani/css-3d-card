@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+main {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.list {
+    display: flex;
+    gap: 0.25rem;
+    transform-style: preserve-3d;
+    list-style-type: none;
+  
+    &:hover :not(:hover) {
+      margin: 0 -20px;
+      transform: perspective(500px) rotateY(-90deg) scale(0.8) translateX(-200px);
+    }
+  
+    &:hover :not(:hover)::after {
+      opacity: 0.4;
+    }
+  }
+  
+  .item {
+    position: relative;
+    width: 120px;
+    aspect-ratio: 3/4;
+    border-radius: 0.5rem;
+    background-size: cover;
+    background-position: center;
+    transition: margin 0.5s, transform 0.5s;
+  
+    &:nth-of-type(1) { 
+        background-image: url(ichika.jpg); 
+    }
+    &:nth-of-type(2) { 
+        background-image: url(nino.jpg); 
+    }
+    &:nth-of-type(3) { 
+        background-image: url(miku.jpg); 
+    }
+    &:nth-of-type(4) { 
+        background-image: url(yotsuba.jpg); 
+    }
+    &:nth-of-type(5) { 
+        background-image: url(itsuki.jpg); 
+    }
+  
+    &:hover ~ .item {
+      transform: perspective(500px) rotateY(90deg) scale(0.95) translateX(200px);
+    }
+  
+    &:hover ~ #onhover {
+      transform: perspective(500px) rotateY(0) scale(1.2);
+    }
+    &:hover ~ #onhover2 {
+      transform: perspective(500px) rotateY(0) scale(1.2);
+    }
+    &:hover ~ #onhover3 {
+      transform: perspective(500px) rotateY(0) scale(1.2);
+    }
+    &:hover ~ #onhover4 {
+      transform: perspective(500px) rotateY(0) scale(1.2);
+    }
+    &:hover ~ #onhover5 {
+      transform: perspective(500px) rotateY(0) scale(1.2);
+    }
+  
+    &::after {
+      content: '';
+      position: absolute;
+      width: inherit;
+      aspect-ratio: inherit;
+      border-radius: inherit;
+      background-color: black;
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+  }
+  
+  h1 {
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    position: absolute;
+    visibility: hidden;
+  }
+  #onhover {
+    color: #f28a92;
+  }
+  #onhover2{
+    color: #f24b52;
+  }
+  #onhover3{
+    color: #a64f4e;
+  }
+  #onhover4{
+    color: #f77752;
+  }
+  #onhover5{
+    color: #dd5548;
+  }
+  
+  .item:nth-of-type(1):hover ~ #onhover {
+    visibility: visible;
+    position: absolute;
+    inset: 50%;
+    translate: -182px 80px;
+  }
+  .item:nth-of-type(2):hover ~ #onhover2 {
+    visibility: visible;
+    position: absolute;
+    inset: 50%;
+    translate: -85px 80px;
+  }
+  .item:nth-of-type(3):hover ~ #onhover3 {
+    visibility: visible;
+    position: absolute;
+    inset: 50%;
+    translate: -5px 80px;
+  }
+  .item:nth-of-type(4):hover ~ #onhover4 {
+    visibility: visible;
+    position: absolute;
+    inset: 50%;
+    translate: 50px 80px;
+  }
+  .item:nth-of-type(5):hover ~ #onhover5 {
+    visibility: visible;
+    position: absolute;
+    inset: 50%;
+    translate: 158px 80px;
+  }
+
+  figure {
+    display: flex;
+    align-items: center;
+  
+    figcaption a {
+      color: #525252;
+      text-decoration: none;
+      margin-left: .5rem;
+      font-size: 1.2rem;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+      &:active {
+        font-size: 1rem;
+      }
+    }
+  }
